@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 function ClaimPoints({ users, onClaim }) {
-  const [selectedUser, setSelectedUser] = useState(users[0]?.name || '');
+  const [selectedUser, setSelectedUser] = useState(users[0]?._id || '');
 
   const handleClaim = (e) => {
     e.preventDefault();
     if (!selectedUser) return;
-    onClaim(selectedUser);
+    onClaim(selectedUser); // Now this sends the user's _id
   };
 
   return (
@@ -18,7 +18,7 @@ function ClaimPoints({ users, onClaim }) {
         onChange={(e) => setSelectedUser(e.target.value)}
       >
         {users.map((user) => (
-          <option key={user.name} value={user.name}>{user.name}</option>
+          <option key={user._id} value={user._id}>{user.name}</option>
         ))}
       </select>
       <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded shadow mt-2">Claim Points</button>

@@ -14,7 +14,7 @@ function Leaderboard({ users }) {
               className="w-10 h-10 rounded-full mx-2 border-2 border-yellow-300"
             />
             <span className="flex-1 text-yellow-900">{user.name}</span>
-            <span className="ml-4 text-yellow-600 font-semibold">{user.points} pts</span>
+            <span className="ml-4 text-yellow-600 font-semibold">{user.totalPoints} pts</span>
           </li>
         ))}
       </ol>
